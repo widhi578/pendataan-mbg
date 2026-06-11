@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendataan MBG X-RPL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app-shell" aria-labelledby="pageTitle">
+        <section class="intro-panel" aria-label="Ringkasan pendataan MBG">
+            <div class="brand-row">
+                <span class="brand-mark" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+                <div>
+                    <p class="eyebrow">Pendataan</p>
+                    <h1 id="pageTitle">MBG Harian</h1>
+                </div>
+            </div>
+
+            <div class="meal-visual" role="img" aria-label="Ilustrasi kotak makan bergizi">
+                <span class="tray tray-main"></span>
+                <span class="tray tray-side"></span>
+                <span class="tray tray-small"></span>
+                <span class="rice"></span>
+                <span class="leaf leaf-one"></span>
+                <span class="leaf leaf-two"></span>
+            </div>
+
+            <div class="summary-strip">
+                <div>
+                    <span>Hari</span>
+                    <strong id="todayLabel">Memuat...</strong>
+                </div>
+                <!-- <div>
+                    <span>Data</span>
+                    <strong>Tidak makan MBG</strong>
+                </div> -->
+            </div>
+        </section>
+
+        <section class="form-panel" aria-labelledby="formTitle">
+            <div class="form-heading">
+                <p class="eyebrow">Input siswa</p>
+                <h2 id="formTitle">Laporan siswa yang tidak makan MBG</h2>
+                <p>Isi data hanya untuk siswa yang tidak mengambil porsi pada hari ini.</p>
+            </div>
+
+            <form id="mbgForm" name="submit-to-google-sheet" novalidate>
+                <div class="field">
+                    <div class="label-row">
+                        <label for="absen">Nomor absen</label>
+                        <span>Minimal 1</span>
+                    </div>
+                    <div class="input-wrap">
+                        <span aria-hidden="true">#</span>
+                        <input type="number" id="absen" name="absen" placeholder="Contoh: 12" min="1" inputmode="numeric" autocomplete="off" required>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="label-row">
+                        <label for="nama">Nama lengkap</label>
+                    </div>
+                    <div class="input-wrap">
+                        <span aria-hidden="true">Aa</span>
+                        <input type="text" id="nama" name="nama" placeholder="Nama siswa" autocomplete="name" required>
+                    </div>
+                </div>
+
+                <button type="submit" id="btnSubmit">
+                    <span class="button-loader" aria-hidden="true"></span>
+                    <span class="button-text">Kirim data</span>
+                    <span class="button-arrow" aria-hidden="true">&rarr;</span>
+                </button>
+            </form>
+
+            <span id="pesanRespon" class="message" role="status" aria-live="polite"></span>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
